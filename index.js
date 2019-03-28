@@ -6,7 +6,7 @@ const server = fastify();
 server.get('/ping', (request, response) => {
   const query = request.raw.originalUrl;
   console.log(query);
-  response.code(200).send({ query });
+  response.code(200).send({ data: { query }});
 });
 
 const port = process.env.PORT || 8080;
