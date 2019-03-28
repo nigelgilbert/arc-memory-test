@@ -9,7 +9,9 @@ server.get('/ping', (request, response) => {
   response.code(200).send({ query });
 });
 
-server.listen(process.env.PORT || 8081, (error, address) => {
+const port = process.env.PORT || 8080;
+
+server.listen(port, (error, address) => {
   if (error) throw error;
   console.log(`Server listening on port ${address}`);
 });
