@@ -4,9 +4,9 @@ const { IncomingMessage, Server, ServerResponse } = require('http');
 const server = fastify();
 
 server.get('/ping', (request, response) => {
-  const { params, query } = request.params;
-  console.log(params, query);
-  response.code(200).send({ params, query });
+  const query = request.raw.originalUrl;
+  console.log(query);
+  response.code(200).send({ query });
 });
 
 server.listen(process.env.PORT || 8081, (error, address) => {
