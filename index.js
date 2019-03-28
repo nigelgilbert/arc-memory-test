@@ -11,7 +11,7 @@ server.get('/ping', (request, response) => {
 
 const port = process.env.PORT || 8080;
 
-server.listen(port, 0.0.0.0', (error, address) => {
+server.listen(port, '0.0.0.0', (error, address) => {
   if (error) throw error;
   console.log(`Server listening on port ${address}`);
 });
